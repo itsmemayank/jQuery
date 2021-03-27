@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery Get/Post</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+
+    <button id="get">Send an HTTP GET request to a page and get the result back</button>
+    
+    <br><br>
+
+    <button id="post">Send an HTTP POST request to a page and get the result back</button>
+
+    <script>
+        $(document).ready(function(){
+
+            // Get Method
+            $("#get").click(function(){
+                $.get("demo_test.asp", function(data, status){
+                alert("Data: " + data + "\nStatus: " + status);
+                });
+            });
+
+            // Post Method
+            $("#post").click(function(){
+                $.post("demo_test_post.asp",
+                {
+                  name: "Donald Duck",
+                  city: "Duckburg"
+                },
+                function(data,status){
+                  alert("Data: " + data + "\nStatus: " + status);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
