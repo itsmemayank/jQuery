@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>jQuery Filtering</title>
+</head>
+<body>
+
+    <h1>Welcome to My Homepage</h1>
+
+    <p>This is a paragraph.</p>
+
+    <div class="top" style="border: 1px solid black;">
+        <p>A paragraph in a div.</p>
+        <p>Another paragraph in a div.</p>
+    </div>
+    
+    <br>
+
+    <div class="mid" style="border: 1px solid black;">
+        <p>A paragraph in another div.</p>
+        <p>Another paragraph in another div.</p>
+    </div>
+
+    <br>
+
+    <div class="mid" style="border: 1px solid black;">
+        <p>A paragraph in another div.</p>
+        <p>Another paragraph in another div.</p>
+    </div>
+    
+    <br>
+
+    <div class="bot" style="border: 1px solid black;">
+        <p>A paragraph in another div.</p>
+        <p>Another paragraph in another div.</p>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+
+            // First Method
+            $("div").first().css("background-color", "yellow");
+
+            // Last Method
+            $("div").last().css('background-color', 'blue');
+
+            // Index Method
+            $("div").eq(1).css("background-color", "green");
+
+            // Filter Method
+            $("div").filter(".mid").css("color", "red");
+
+            // Not Method
+            $("div").not(".mid").css("color", "pink");
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>jQuery Ancestor</title>
+    <style>
+        .ancestors * { 
+          display: block;
+          border: 2px solid lightgrey;
+          color: lightgrey;
+          padding: 5px;
+          margin: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="ancestors">
+
+        <!-- Parents -->
+        <div style="width:500px;">div (grandparent)   
+            <p>p (direct parent)
+                <span id="1">span</span>
+            </p> 
+        </div>
+
+        <!-- Parent -->
+        <div style="width:500px;">div (great-grandparent)
+            <ul>ul (grandparent)  
+                <li>li (direct parent)
+                <span id="2">span</span>
+                </li>
+            </ul>   
+        </div>
+        
+        <!-- ParentsUntil -->
+        <div style="width:500px;">div (great-grandparent)
+            <ul>ul (grandparent)  
+                <li>li (direct parent)
+                <span id="3">span</span>
+                </li>
+            </ul>   
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+
+            // Parent Method
+            $("#1").parent().css({"color": "red", "border": "2px solid red"});
+
+            // Parents Method
+            $("#2").parents().css({"color": "blue", "border": "2px solid blue"});
+        
+            // Parents Until Method
+            $("#3").parentsUntil("div").css({"color": "green", "border": "2px solid green"});
+        });
+    </script>
+</body>
+</html>

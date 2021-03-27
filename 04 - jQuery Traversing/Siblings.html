@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>jQuery Siblings</title>
+    <style>
+        .siblings * { 
+            display: block;
+            border: 2px solid lightgrey;
+            color: lightgrey;
+            padding: 5px;
+            margin: 15px;
+        }
+
+        div {
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="siblings">div (parent)
+        <p>p</p>
+        <span>span</span>
+        <h2>h2</h2>
+        <h3>h3</h3>
+        <h4>h4</h4>
+        <h5>h5</h5>
+        <h6>h6</h6>
+        <p>p</p>
+    </div>
+    <script>
+        $(document).ready(function(){
+
+            // Siblings Method
+            $("h2").siblings().css({"color": "red", "border": "2px solid red"});
+        
+            // Next Method
+            // $("h2").next().css({"color": "red", "border": "2px solid yellow"});
+        
+            // NextAll Method
+            // $("h2").nextAll().css({"color": "red", "border": "2px solid blue"});
+            
+            // NextUntil Method
+            // $("h2").nextUntil("h6").css({"color": "red", "border": "2px solid green"});
+            
+            // Prev Method
+            // $("h2").prev().css({"color": "red", "border": "2px solid purple"});
+        
+            // PrevAll Method
+            // $("h2").prevAll().css({"color": "red", "border": "2px solid pink"});
+        
+            // PrevUntil Method
+            // $("h6").prevUntil("p").css({"color": "red", "border": "2px solid orange"});
+        });
+    </script>
+</body>
+</html>
