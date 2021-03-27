@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Fade Effect</title>
+</head>
+<body>
+    
+    <p>Demonstrate with different fade parameters.</p>
+
+    <button id="fin">Fade In</button>
+    <button id="fout">Fade Out</button>
+    <button id="ftoggle">Fade Toggle</button>
+    <button id="fto">Fade To</button>
+
+
+    <br><br>
+
+    <div id="div1" style="width:80px;height:80px;display:none;background-color:red;"></div><br>
+    <div id="div2" style="width:80px;height:80px;display:none;background-color:green;"></div><br>
+    <div id="div3" style="width:80px;height:80px;display:none;background-color:blue;"></div>
+
+    <script>
+        $(document).ready(function(){
+
+            // Fade In Effect
+            $("#fin").click(function(){
+                $("#div1").fadeIn();
+                $("#div2").fadeIn("slow");
+                $("#div3").fadeIn(3000);
+              });
+
+            // Fade Out Effect
+            $("#fout").click(function(){
+                $("#div1").fadeOut();
+                $("#div2").fadeOut("slow");
+                $("#div3").fadeOut(3000);
+
+            // Fade Toggle Effect
+            $("#ftoggle").click(function(){
+                $("#div1").fadeToggle();
+                $("#div2").fadeToggle("slow");
+                $("#div3").fadeToggle(3000);
+              });
+            });
+
+            // Fade To Effect
+            $("#fto").click(function(){
+                $("#div1").fadeTo("slow", 0.15);
+                $("#div2").fadeTo("slow", 0.4);
+                $("#div3").fadeTo("slow", 0.7);
+            });
+        });
+    </script>
+</body>
+</html>
