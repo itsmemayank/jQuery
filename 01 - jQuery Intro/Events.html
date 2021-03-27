@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>jQuery Syntax</title>
+</head>
+<body>
+    <p>If you click on me, I will disappear.</p>
+    <br>
+    <p>If you double click on me, I will disappear.</p>
+    <br>
+    <p id="p1">Enter this paragraph.</p>
+    <br>
+    <p id="p2">Hover on this paragraph.</p>
+    <br>
+    <input type="text" placeholder="click inside the box">
+    <br>
+
+    <script>
+        $(document).ready(function(){
+            // Click Event
+            $('p').click(function(){
+                $(this).hide()
+            })
+
+            // Double Click Event
+            $('p').dblclick(function(){
+                $(this).hide()
+            })
+
+            // Mouse Enter Event
+            $("#p1").mouseenter(function(){
+                alert("You entered p1!");
+            });
+
+            // Mouse Leave Event
+            $("#p1").mouseleave(function(){
+                alert("Bye! You now leave p1!");
+            });
+
+            // Mouse Down Event
+            $("#p1").mousedown(function(){
+                alert("Mouse down over p1!");
+            });
+
+            // Mouse Up Event
+            $("#p1").mouseup(function(){
+                alert("Mouse down over p1!");
+            });
+
+            // Hover Event
+            $("#p2").hover(function(){
+                alert("You entered p2!");
+            },
+            function(){
+                alert("Bye! You now leave p2!");
+            });
+            
+            // Focus Event - The function is executed when the form field gets focus
+            $("input").focus(function(){
+                $(this).css("background-color", "#cccccc");
+            });
+
+            // Blur Event - The function is executed when the form field loses focus
+            $("input").blur(function(){
+                $(this).css("background-color", "#f1f1f1");
+            });
+
+            // The On method / Wildcard Method
+            $('p').on(click, () => {
+                $(this).hide()
+            });
+    });
+    </script>
+</body>
+</html>
